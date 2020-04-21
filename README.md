@@ -4,6 +4,7 @@
 ```bash
 # 项目端口
 eureka(6210)、zuul(6220)、feign(6230)、ribbon(6240)
+
 # 每个项目的编译，编程成功之后会在target生成jar
 ~]$ mvn clean install -Dmaven.test.skip=true compile package spring-boot:repackage
 
