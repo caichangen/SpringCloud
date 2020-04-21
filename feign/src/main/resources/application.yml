@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: feign
+server:
+  port: 6230
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:6210/eureka/

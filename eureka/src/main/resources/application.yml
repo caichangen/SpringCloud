@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: eureka
+server:
+  port: 6210
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: eureka
+  client:
+    registerWithEureka: false #false表示不向注册中心注册自己。
+    fetchRegistry: false
+    serviceUrl:  #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+      defaultZone: http://127.0.0.1:6210/eureka/

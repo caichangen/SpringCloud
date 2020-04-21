@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: zuul
+server:
+  port: 6220
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: zuul
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:6210/eureka/
+
+zuul:
+  routes:
+    ribbonDemo: 
+      path: /ribbon/**
+      serviceId: ribbon
+    feignDemo:
+      path: /feign/**
+      serviceId: feign

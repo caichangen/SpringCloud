@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: ribbon
+server:
+  port: 6240
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:6210/eureka/
