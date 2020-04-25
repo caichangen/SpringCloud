@@ -15,7 +15,7 @@ eureka(6210)、zuul(6220)、feign(6230)、ribbon(6240)
 ~]$ curl http://${project_host_ip}:${project_host_port}/check
 
 # 通过zuul来调用项目，主要是为了测试zuul是否能调通后端的项目
-~]$ curl http://${zuul_host_ip}:${zuul_host_port}/zcheck
+~]$ curl http://${zuul_host_ip}:${zuul_host_port}/${project_name}/zcheck
 
 # 通过eureka来调用项目，因为eureka是一个注册中心，所有的项目都会在eureka上注册自己的地址，eureka里面有每个子项目的连接信息，所以这里主要是测试是否能够直接通过zuul拿到服务的地址并且调通，该项目是使用feign到eureka里面去拿ribbon项目的地址(并且请求该地址拿到返回值并且返回)，然后ribbon会从eureka里面去拿feign的返回值,所以最终的流程应该是这样的feign->eureka->ribbon->eureka->feign，这里所以我们在请求这个feign接口的时候，最终返回的其实是feign自己中的一个接口的返回值
 ~]$ curl http://${feign_host_ip}:${feign_host_port}/echeck
